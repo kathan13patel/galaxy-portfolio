@@ -1,0 +1,118 @@
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+  cursor: default;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(99, 102, 241, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.skill-badge:hover::before {
+  transform: translateX(100%);
+}
+
+.skill-badge:hover {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 5px 15px rgba(99, 102, 241, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.skill-badge:active {
+  transform: scale(0.95);
+}
+
+/* Skill level indicator */
+.skill-level {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+.skill-level.beginner {
+  background-color: #10b981; /* Green */
+}
+
+.skill-level.intermediate {
+  background-color: #f59e0b; /* Yellow */
+}
+
+.skill-level.advanced {
+  background-color: #ef4444; /* Red */
+}
+
+.skill-level.expert {
+  background-color: #8b5cf6; /* Purple */
+}
+
+/* Animation for appearing skills */
+@keyframes skillAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.skill-badge.appearing {
+  animation: skillAppear 0.4s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .skill-badge {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .skill-level {
+    width: 4px;
+    height: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .skill-badge {
+    padding: 0.375rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .skill-badge {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
