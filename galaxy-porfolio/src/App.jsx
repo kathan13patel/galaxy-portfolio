@@ -147,7 +147,7 @@ function App() {
                                 <motion.a
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    href="#projects"
+                                    href="#contact"
                                     className="px-8 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-colors flex items-center gap-2" style={{
                                         textShadow: "0 2px 6px rgba(0,0,0,0.7)"
                                     }}>
